@@ -161,15 +161,14 @@ component Mux is
 		O_OUT					:	out std_logic_vector(3 downto 0));
 end component;
 
---Signals for storing function outputs.
 signal f1,f2,f3,f4	:	std_logic_vector(3 downto 0);
 
 begin
 --Structural description of ALU
 F1	:	Function1 port map (A_IN, B_IN, f1);
-F2	:	Function2 port map (A_IN, B_IN, f2);
-F3	:	Function3 port map (A_IN, B_IN, f3);
-F4	:	Function4 port map (A_IN, B_IN, f4);
+F2	:	Function1 port map (A_IN, B_IN, f2);
+F3	:	Function1 port map (A_IN, B_IN, f3);
+F4	:	Function1 port map (A_IN, B_IN, f4);
 MUX	:	Mux port map(f1, f2, f3 ,f4, C_IN, O_OUT);
 
 end ALU;

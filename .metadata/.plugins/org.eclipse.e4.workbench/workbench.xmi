@@ -28,10 +28,9 @@
           <tags>persp.actionSet:org.eclipse.debug.ui.launchActionSet</tags>
           <tags>persp.actionSet:org.eclipse.ui.NavigateActionSet</tags>
           <tags>persp.actionSet:org.zamia.plugin.ZamiaActionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_GNdopbfFEeedTt1BMRRn5A" selectedElement="_GNdoprfFEeedTt1BMRRn5A" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_GNdopbfFEeedTt1BMRRn5A" selectedElement="_GNdoqbfFEeedTt1BMRRn5A" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_GNdoprfFEeedTt1BMRRn5A" elementId="left" containerData="2000" selectedElement="_GNdop7fFEeedTt1BMRRn5A">
               <tags>newtablook</tags>
-              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_GNdop7fFEeedTt1BMRRn5A" elementId="org.zamia.plugin.views.navigator.ZamiaNavigator" ref="_GNeP2bfFEeedTt1BMRRn5A"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_GNdoqLfFEeedTt1BMRRn5A" elementId="org.eclipse.ui.views.BookmarkView" toBeRendered="false" ref="_GNeP6rfFEeedTt1BMRRn5A"/>
             </children>
@@ -73,6 +72,7 @@
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_GNePtbfFEeedTt1BMRRn5A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="mux_tb.vhd" iconURI="platform:/plugin/org.zamia.plugin/share/images/vhdl_source.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.zamia.editors.VHDLEditor&quot; name=&quot;mux_tb.vhd&quot; partName=&quot;mux_tb.vhd&quot; title=&quot;mux_tb.vhd&quot; tooltip=&quot;5b4iMUX/mux_tb.vhd&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/5b4iMUX/mux_tb.vhd&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1113&quot; selectionTopPixel=&quot;493&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -102,13 +102,15 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_bl_R0ML8EeeLaNQNsHpJig" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="alu.vhd" iconURI="platform:/plugin/org.zamia.plugin/share/images/vhdl_source.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.zamia.editors.VHDLEditor&quot; name=&quot;alu.vhd&quot; partName=&quot;alu.vhd&quot; title=&quot;alu.vhd&quot; tooltip=&quot;ALU/alu.vhd&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ALU/alu.vhd&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;263&quot; selectionTopPixel=&quot;510&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.zamia.editors.VHDLEditor&quot; name=&quot;alu.vhd&quot; partName=&quot;alu.vhd&quot; title=&quot;alu.vhd&quot; tooltip=&quot;ALU/alu.vhd&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ALU/alu.vhd&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3723&quot; selectionTopPixel=&quot;2352&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.zamia.editors.VHDLEditor</tags>
           <tags>removeOnHide</tags>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_d7S8UML8EeeLaNQNsHpJig" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="alu_tb.vhd" iconURI="platform:/plugin/org.zamia.plugin/share/images/vhdl_source.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.zamia.editors.VHDLEditor&quot; name=&quot;alu_tb.vhd&quot; partName=&quot;alu_tb.vhd&quot; title=&quot;alu_tb.vhd&quot; tooltip=&quot;ALU/alu_tb.vhd&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ALU/alu_tb.vhd&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;663&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.zamia.editors.VHDLEditor&quot; name=&quot;alu_tb.vhd&quot; partName=&quot;alu_tb.vhd&quot; title=&quot;alu_tb.vhd&quot; tooltip=&quot;ALU/alu_tb.vhd&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ALU/alu_tb.vhd&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;663&quot; selectionTopPixel=&quot;169&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.zamia.editors.VHDLEditor</tags>
           <tags>removeOnHide</tags>
@@ -125,8 +127,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:Zamia</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_GNeP2rfFEeedTt1BMRRn5A" elementId="org.zamia.plugin.views.navigator.ZamiaNavigator">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -221,7 +221,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GNeQDLfFEeedTt1BMRRn5A" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_7m-yp8UsEee3z7OEjMCVkQ" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_GNffSrfFEeedTt1BMRRn5A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_UlqL18UvEee1IcadQMJluw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_GNffSrfFEeedTt1BMRRn5A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GNeQGrfFEeedTt1BMRRn5A" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -239,7 +239,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GNeQMLfFEeedTt1BMRRn5A" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_7nIjpcUsEee3z7OEjMCVkQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_GNfe9LfFEeedTt1BMRRn5A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Ulz82sUvEee1IcadQMJluw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_GNfe9LfFEeedTt1BMRRn5A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GNeQPLfFEeedTt1BMRRn5A" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
