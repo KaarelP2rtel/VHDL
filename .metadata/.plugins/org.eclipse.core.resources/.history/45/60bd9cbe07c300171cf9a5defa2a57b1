@@ -1,0 +1,127 @@
+------------------------------------------------------------------------------
+--  File: alu_tb.vhd
+------------------------------------------------------------------------------
+--ALU testbench
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+--Testbench entity is always empty
+entity AluTestBench is
+end AluTestbench;
+
+architecture Bench of AluTestBench is
+
+ --Component declaration for MUX
+component Alu is
+	port(
+		A_IN, B_IN, C_IN	:	in std_logic_vector(3 downto 0);
+		O_OUT				:	out std_logic_vector(3 downto 0));
+end component;
+
+--Local signal declarations
+signal a,b,o,expected	:	std_logic_vector(3 downto 0);
+signal c				:	std_logic_vector(1 downto 0);
+begin
+--Component instantiation of MUX
+ALU: Alu port map (a, b, c, o);
+
+--Stimulus process
+Stimulus: process
+	begin
+		--Test Count 1
+		c<="00";
+		a<="0110";
+		b<="0011";
+		expected<="0100";
+		wait for 3 ns;
+		
+		a<="1111";
+		b<="1111";
+		expected<="1000";
+		wait for 3 ns;
+		
+		a<="0000";
+		b<="0000";
+		expected<="0000";
+		wait for 3 ns;
+
+		a<="0110";
+		b<="0111";
+		expected<="0111";
+		wait for 3 ns;
+		
+		
+		
+		--Test ROR
+		c<="01";
+		a<="0110";
+		b<="0011";
+		expected<="0011";
+		wait for 3 ns;
+		
+		a<="1111";
+		b<="1001";
+		expected<="1111";
+		wait for 3 ns;
+		
+		a<="0000";
+		b<="0110";
+		expected<="0000";
+		wait for 3 ns;
+
+		a<="1001";
+		b<="0111";
+		expected<="1100";
+		wait for 3 ns;
+		
+		
+		
+		--Test set A B 
+		c<="01";
+		a<="0110";
+		b<="0011";
+		expected<="1000";
+		wait for 3 ns;
+		
+		a<="1111";
+		b<="1001";
+		expected<="0010";
+		wait for 3 ns;
+		
+		a<="0000";
+		b<="0110";
+		expected<="0100";
+		wait for 3 ns;
+
+		a<="1001";
+		b<="0100";
+		expected<="0001";
+		wait for 3 ns;
+		
+		
+		
+		--Test Home TODO
+		c<="01";
+		a<="0110";
+		b<="0011";
+		expected<="1000";
+		wait for 3 ns;
+		
+		a<="1111";
+		b<="1001";
+		expected<="0010";
+		wait for 3 ns;
+		
+		a<="0000";
+		b<="0110";
+		expected<="0100";
+		wait for 3 ns;
+
+		a<="1001";
+		b<="0100";
+		expected<="0001";
+		wait for 3 ns;
+		wait;  --Suspend
+	end process Stimulus;
+
+end Bench;

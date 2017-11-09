@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.zamia.plugin.SimLaunchConfigurationDelegate">
+<stringAttribute key="org.zamia.plugin.ATTR_PROJECT" value="5b4iMUX"/>
+<stringAttribute key="org.zamia.plugin.ATTR_TOPLEVEL" value="WORK.MUXTESTBENCH(BENCH)"/>
+<listAttribute key="org.zamia.plugin.ATTR_TRACES">
+<listEntry value="signal:V:0:HEX:0"/>
+<listEntry value="signal:Y:14:HEX:0"/>
+<listEntry value="signal:Z:13:HEX:0"/>
+<listEntry value="signal:X:15:HEX:0"/>
+<listEntry value="signal:OBEH:12:HEX:0"/>
+<listEntry value="signal:OFLOW:4:HEX:0"/>
+<listEntry value="signal:OSTRUCT:10:HEX:0"/>
+<listEntry value="signal:C:1:HEX:0"/>
+</listAttribute>
+</launchConfiguration>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.zamia.plugin.SimLaunchConfigurationDelegate">
+<stringAttribute key="org.zamia.plugin.ATTR_PROJECT" value="5b4iMUX"/>
+<stringAttribute key="org.zamia.plugin.ATTR_TOPLEVEL" value="WORK.MUX(RTL)"/>
+<listAttribute key="org.zamia.plugin.ATTR_TRACES"/>
+</launchConfiguration>

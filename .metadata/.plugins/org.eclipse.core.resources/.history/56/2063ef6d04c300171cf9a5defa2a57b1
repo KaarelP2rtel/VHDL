@@ -1,0 +1,36 @@
+------------------------------------------------------------------------------
+--  File: alu_tb.vhd
+------------------------------------------------------------------------------
+--ALU testbench
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+--Testbench entity is always empty
+entity AluTestBench is
+end AluTestbench;
+
+architecture Bench of MuxTestBench is
+
+ --Component declaration for MUX
+component Alu is
+	port(
+		A_IN, B_IN, C_IN	:	in std_logic_vector(3 downto 0);
+		O_OUT				:	out std_logic_vector(3 downto 0));
+end component;
+
+--Local signal declarations
+signal a,b	:	std_logic_vector(4 downto 0);
+signal c	:	std_logic_vector(1 downto 0);
+
+begin
+--Component instantiation of MUX
+ALU: Alu port map (a, b, c);
+
+--Stimulus process
+Stimulus: process
+	begin
+		
+		wait;  --Suspend
+	end process Stimulus;
+
+end Bench;

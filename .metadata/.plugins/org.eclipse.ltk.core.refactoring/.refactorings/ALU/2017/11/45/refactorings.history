@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;alu.vhd&apos; to &apos;ALU&apos;" description="Move &apos;alu.vhd&apos; to &apos;ALU&apos;" destination="/ALU" element1="/5b4iMUX/alu.vhd" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1509977512569" updateReferences="true"/>
+</session>

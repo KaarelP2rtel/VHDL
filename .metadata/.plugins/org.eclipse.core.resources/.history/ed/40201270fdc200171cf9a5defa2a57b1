@@ -1,0 +1,31 @@
+------------------------------------------------------------------------------
+--  File: alu.vhd
+------------------------------------------------------------------------------
+--4 bit 4 Funtion ALU
+--Control signal vector is C_IN;
+--Two 4 bit inputs A and B.
+--If control is '00' then input V is chosen.
+
+
+--4:1 4-bit MUX
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity Mux is
+	port(
+		XT_IN,YT_IN	:	in std_logic_vector(3 downto 0);
+		CT_IN		:	in std_logic_vector(1 downto 0);
+		ZT_OUT		:	out std_logic_vector(3 downto 0));
+end Mux;
+
+architecture TTOMUX of ttoMux is
+begin
+TTOMUX: process(XT_IN, YT_IN, CT_IN)
+begin
+	if CT_IN='0' then
+		ZT_OUT <= XT_IN;
+	elsif CT_IN='1' then
+		ZT_OUT <= YT_IN;
+	end if;
+	
+end process TTOMUX;
+end TTOMUX;

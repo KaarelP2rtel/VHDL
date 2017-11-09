@@ -1,0 +1,90 @@
+------------------------------------------------------------------------------
+--  File: mux_tb.vhd
+------------------------------------------------------------------------------
+--Multiplexor testbench
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+--Testbench entity is always empty
+entity MuxTestBench is
+end MuxTestbench;
+
+architecture Bench of MuxTestBench is
+
+  --Component declaration for MUX
+  component Mux is
+  port ( 
+ --First 5 bit input
+		V0_IN	:	in std_logic;
+		V1_IN	:	in std_logic;
+		V2_IN	:	in std_logic;
+ 		V3_IN	:	in std_logic;
+		V4_IN	:	in std_logic;
+--Second 5 bit input
+		X0_IN 	:	in std_logic;
+		X1_IN	:	in std_logic;
+		X2_IN	:	in std_logic;
+		X3_IN	:	in std_logic;
+		X4_IN 	:	in std_logic;
+--Third 5 bit input
+		Y0_IN	:	in std_logic;
+		Y1_IN	:	in std_logic;
+		Y2_IN	:	in std_logic;
+		Y3_IN	:	in std_logic;
+		Y4_IN	:	in std_logic;
+--Fourth 5 bit input
+		Z0_IN	:	in std_logic;
+		Z1_IN	:	in std_logic;
+		Z2_IN	:	in std_logic;
+		Z3_IN	:	in std_logic;
+		Z4_IN	:	in std_logic;
+--Selection bits / Control signals 
+		C0_IN	:	in std_logic;
+		C1_IN	:	in std_logic;
+--5 bit output behavioral description
+		O0_OUT_BEH	:	out std_logic;
+		O1_OUT_BEH	:	out std_logic;
+		O2_OUT_BEH	:	out std_logic;
+		O3_OUT_BEH	:	out std_logic;
+		O4_OUT_BEH	:	out std_logic;
+--5 bit output dataflow description
+		O0_OUT_FLOW	:	out std_logic;
+		O1_OUT_FLOW	:	out std_logic;
+		O2_OUT_FLOW	:	out std_logic;
+		O3_OUT_FLOW	:	out std_logic;
+		O4_OUT_FLOW	:	out std_logic;
+--5 bit output Structural description
+		O0_OUT_STRUCT	:	out std_logic;
+		O1_OUT_STRUCT	:	out std_logic;
+		O2_OUT_STRUCT	:	out std_logic;
+		O3_OUT_STRUCT	:	out std_logic;
+		O4_OUT_STRUCT	:	out std_logic);
+end component;
+
+--Local signal declarations
+signal v0, v1, v2, v3, v4, x1, x2, x3, x4, y0, y1, y2, y3, y4, z0, z1, z2, z3, z4, c0, c1  : std_logic;  
+signal beh0, beh1, beh2, beh3, beh4, flow0, flow1, flow2, flow3, flow4, struct0, struct1, struct2, struct3, struct4 : std_logic;
+
+begin
+
+--Component instantiation of MUX
+Mux_comp: MUX port map (v0, v1, v2, v3, v4, x1, x2, x3, x4, y0, y1, y2, y3, y4, z0, z1, z2, z3, z4, c0, c1,
+ beh0, beh1, beh2, beh3, beh4, flow0, flow1, flow2,
+  flow3, flow4, struct0, struct1, struct2, struct3, struct4);
+ 
+--Stimulus process
+Stimulus: process
+	begin
+		c1 <= '0'; 
+		c0 <= '0';
+		v0 <= '0'; 
+		v1 <= '1';
+		v2 <= '0'; 
+		v3 <= '1';
+		v4 <= '0';
+		wait for 10 ns;
+		--assert OutSigBehTB = BInTB report "OutSigBehTB /= BInTB" severity note; --The assert statement tests the boolean condition. If this is false, it outputs a message containing the report string to the simulator screen.
+		wait;  --Suspend
+	end process Stimulus;
+
+end Bench;

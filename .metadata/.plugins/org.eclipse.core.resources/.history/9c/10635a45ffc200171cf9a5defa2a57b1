@@ -1,0 +1,60 @@
+------------------------------------------------------------------------------
+--  File: alu.vhd
+------------------------------------------------------------------------------
+--4 bit 4 Funtion ALU
+--Control signal vector is C_IN;
+--Two 4 bit inputs A and B.
+--If control is '00' then input V is chosen.
+
+
+--4:1 4-bit MUX
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity Mux is
+	port(
+		F1_IN,F2_IN,F3_IN,F4_IN	:	in std_logic_vector(3 downto 0);
+		C_IN					:	in std_logic_vector(1 downto 0);
+		O_OUT					:	out std_logic_vector(3 downto 0));
+end Mux;
+
+architecture MUX of Mux is
+begin
+MUX: process(F1_IN,F2_IN,F3_IN,F4_IN, C_IN)
+begin
+	if C_IN="00" then
+		O_OUT<= F1_IN;
+	elsif CT_IN="01" then
+		O_OUT<= F2_IN;
+	elsif CT_IN="10" then
+		O_OUT<= F3_IN;
+	elsif CT_IN="11" then
+		O_OUT<= F4_IN;
+	end if;
+	
+end process MUX;
+end MUX;
+--Function 1
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity Function1 is
+	port(
+		A_IN, B_IN	:	in std_logic_vector(3 downto 0);
+		O_OUT		:	out std_logic_vector(3 downto 0));
+end Function1;
+
+architecture FUNCTION1 of Function1 is
+begin
+FUNCTION1: process(A_IN, B_IN)
+begin
+	if C_IN="00" then
+		O_OUT<= F1_IN;
+	elsif CT_IN="01" then
+		O_OUT<= F2_IN;
+	elsif CT_IN="10" then
+		O_OUT<= F3_IN;
+	elsif CT_IN="11" then
+		O_OUT<= F4_IN;
+	end if;
+	
+end process FUNCTION1;
+end FUNCTION1;

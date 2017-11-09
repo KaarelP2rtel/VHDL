@@ -1,0 +1,107 @@
+------------------------------------------------------------------------------
+--  File: alu_tb.vhd
+------------------------------------------------------------------------------
+--ALU testbench
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+--Testbench entity is always empty
+entity MuxTestBench is
+end MuxTestbench;
+
+architecture Bench of MuxTestBench is
+
+ --Component declaration for MUX
+component Alu is
+	port ( 
+		A_IN, B_IN,	:	in std_logic_vector(3 downto 0);
+		C_IN		:	in std_logic_vector(1 downto 0);
+		O_OUT		:	out std_logic_vector(3 downto 0));	
+end component;
+
+--Local signal declarations
+signal a,b	:	std_logic_vector(4 downto 0);
+signal c	:	std_logic_vector(1 downto 0);
+
+begin
+--Component instantiation of MUX
+Mux_comp: MUX port map ();
+
+--Stimulus process
+Stimulus: process
+	begin
+		v <= "01100";
+		x <= "01010";
+		y <= "00000";
+		z <= "00110";
+
+		c <= "00";	--Outputs should be V
+		wait for 3 ns;
+
+		c <= "01";	--Outputs should be X
+		wait for 3 ns;
+
+		c <= "10";	--Outputs should be Y
+		wait for 3 ns;
+
+		c <= "11";	--Outputs should be Z
+		wait for 3 ns;
+		
+		
+		v <= "11111";
+		x <= "00000";
+		y <= "10101";
+		z <= "01010";
+
+		c <= "00";	--Outputs should be V
+		wait for 3 ns;
+
+		c <= "01";	--Outputs should be X
+		wait for 3 ns;
+
+		c <= "10";	--Outputs should be Y
+		wait for 3 ns;
+
+		c <= "11";	--Outputs should be Z
+		wait for 3 ns;
+		
+		
+		v <= "11001";
+		x <= "10011";
+		y <= "00001";
+		z <= "10000";
+
+		c <= "00";	--Outputs should be V
+		wait for 3 ns;
+
+		c <= "01";	--Outputs should be X
+		wait for 3 ns;
+
+		c <= "10";	--Outputs should be Y
+		wait for 3 ns;
+
+		c <= "11";	--Outputs should be Z
+		wait for 3 ns;
+		
+		
+		v <= "11011";
+		x <= "10011";
+		y <= "01001";
+		z <= "10010";
+
+		c <= "X0";	--Outputs should be V
+		wait for 3 ns;
+
+		c <= "01";	--Outputs should be X
+		wait for 3 ns;
+
+		c <= "10";	--Outputs should be Y
+		wait for 3 ns;
+
+		c <= "1U";	--Outputs should be Z
+		wait for 3 ns;
+
+		wait;  --Suspend
+	end process Stimulus;
+
+end Bench;
