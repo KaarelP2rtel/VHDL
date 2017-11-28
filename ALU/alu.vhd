@@ -35,9 +35,10 @@ end MUX;
 
 
 
---Function 1 Entity and architecture  Count 1  out <= std_logic_vector(to_unsigned(to_integer(unsigned( in )) + 1, 8));
+--Function 1 Entity and architecture  Count 1
 library IEEE;
 use IEEE.std_logic_1164.all;
+use ieee.numeric_std.all;
 entity Function1 is
 	port(
 		A_IN, B_IN	:	in std_logic_vector(3 downto 0);
@@ -45,21 +46,29 @@ entity Function1 is
 end Function1;
 
 architecture FUNCTION1 of Function1 is
+variable Count : integer;
 begin
-
 FUNCTION1: process(A_IN, B_IN)
-begin
-	--TODO
-	O_OUT<="0000";
+begin	
+	Count:=0;
+	for I in 0 to 3 loop
+		if A_IN(I)='1' then
+			Count := Count + 1;
+		end if;
+		if B_IN(I)='1' then
+			Count := Count + 1;
+		end if;
+	end loop;
+	O_OUT<=std_logic_vector(to_unsigned(Count, 4));
 end process FUNCTION1;
 end FUNCTION1;
-
 
 
 
 --Function 2 Entity and architecture Ringnihe paremale
 library IEEE;
 use IEEE.std_logic_1164.all;
+use ieee.numeric_std;
 entity Function2 is
 	port(
 		A_IN, B_IN	:	in std_logic_vector(3 downto 0);
@@ -67,11 +76,14 @@ entity Function2 is
 end Function2;
 
 architecture FUNCTION2 of Function2 is
+signal temp	:	std_logic;
 begin
 FUNCTION2: process(A_IN, B_IN)
 begin
-	--TODO
-	O_OUT<="0000";
+	O_OUT(3)<=A_IN(0);
+	O_OUT(2)<=A_IN(3);
+	O_OUT(1)<=A_IN(2);
+	O_OUT(0)<=A_IN(1);
 end process FUNCTION2;
 end FUNCTION2;
 
@@ -80,6 +92,7 @@ end FUNCTION2;
 --Function 3 Entity and architecture Set a, b
 library IEEE;
 use IEEE.std_logic_1164.all;
+USE ieee.numeric_std.ALL;
 entity Function3 is
 	port(
 		A_IN, B_IN	:	in std_logic_vector(3 downto 0);
@@ -87,11 +100,14 @@ entity Function3 is
 end Function3;
 
 architecture FUNCTION3 of Function3 is
+signal temp:	std_logic_vector(3 downto 0);
+variable t : integer :=0;
 begin
-FUNCTION3: process(A_IN, B_IN)
+FUNCTION3: process(A_IN, B_IN) 
 begin
-	--TODO
-	O_OUT<="0000";
+	t:=to_integer(unsigned(B_IN(1 downto 0)));
+	O_OUT<=A_IN;
+	O_OUT(t)<='1';
 end process FUNCTION3;
 end FUNCTION3;
 
@@ -108,10 +124,10 @@ end Function4;
 
 architecture FUNCTION4 of Function4 is
 begin
-FUNCTION4: process(A_IN, B_IN)
+FUNCTION4: process(A_IN)
 begin
-	--TODO
 	O_OUT<="0000";
+	O_OUT(0)<=(not(A_IN(2))and A_IN(0))or(A_IN(3)and A_IN(2))or(A_IN(3)and not(A_IN(1)))or(A_IN(2)and not(A_IN(1)));
 end process FUNCTION4;
 end FUNCTION4;
 

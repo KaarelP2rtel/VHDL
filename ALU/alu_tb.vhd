@@ -48,7 +48,7 @@ Stimulus: process
 
 		a<="0110";
 		b<="0111";
-		expected<="0111";
+		expected<="0101";
 		wait for 3 ns;
 		
 		
@@ -60,9 +60,9 @@ Stimulus: process
 		expected<="0011";
 		wait for 3 ns;
 		
-		a<="1111";
+		a<="1101";
 		b<="1001";
-		expected<="1111";
+		expected<="1110";
 		wait for 3 ns;
 		
 		a<="0000";
@@ -81,22 +81,22 @@ Stimulus: process
 		c<="10";
 		a<="0110";
 		b<="0011";
-		expected<="1000";
+		expected<="1110";
 		wait for 3 ns;
 		
-		a<="1111";
-		b<="1001";
-		expected<="0010";
+		a<="1001";
+		b<="1010";
+		expected<="1101";
 		wait for 3 ns;
 		
 		a<="0000";
-		b<="0110";
+		b<="XX10";
 		expected<="0100";
 		wait for 3 ns;
 
 		a<="1001";
-		b<="0100";
-		expected<="0001";
+		b<="UU01";
+		expected<="1011";
 		wait for 3 ns;
 		
 		
@@ -105,22 +105,22 @@ Stimulus: process
 		c<="11";
 		a<="0110";
 		b<="0011";
-		expected<="UUUU";
+		expected<="0000";
 		wait for 3 ns;
 		
 		a<="1111";
 		b<="1001";
-		expected<="UUUU";
+		expected<="0001";
 		wait for 3 ns;
 		
 		a<="0000";
 		b<="0110";
-		expected<="UUUU";
+		expected<="0000";
 		wait for 3 ns;
 
 		a<="1001";
 		b<="0100";
-		expected<="UUUU";
+		expected<="0001";
 		wait for 3 ns;
 		
 		wait;  --Suspend
